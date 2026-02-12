@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رزرو سالن VIP</title>
+<style>
+body{background:#111;color:white;font-family:sans-serif;padding:20px}
+input,select,button{width:100%;margin-top:10px;padding:10px;border-radius:8px;border:none}
+button{background:gold;color:black;font-weight:bold}
+</style>
+</head>
+<body>
+
+<h2>رزرو عمومی</h2>
+
+<input id="name" placeholder="نام کامل">
+<input id="phone" placeholder="شماره (09xxxxxxxxx)">
+
+<select id="service">
+<option>کوتاهی مو</option>
+<option>رنگ مو</option>
+<option>شینیون</option>
+<option>میکاپ</option>
+</select>
+
+<input type="date" id="date">
+<input type="time" id="time">
+
+<button onclick="submitBooking()">ثبت نوبت</button>
+
+<script>
+function submitBooking(){
+    let phone = document.getElementById("phone").value;
+
+    if(!phone.startsWith("09") || phone.length != 11){
+        alert("شماره معتبر نیست");
+        return;
+    }
+
+    alert("در نسخه نهایی به API متصل می‌شود");
+}
+</script>
+
+</body>
+</html>
